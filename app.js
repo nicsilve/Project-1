@@ -1,5 +1,5 @@
 // console.log('this works')
-
+let playerCard = document.getElementById('playercards')
 let betInput = document.getElementById('betinput')
 let dealButton = document.getElementById('dealbutton');
 let dealerCard = document.getElementById('dealercards')
@@ -10,8 +10,10 @@ let hitButton = document.getElementById('hit');
 let suits = ['♦','♠','♣','♥'];
 let values = ['Ace',2,3,4,5,6,7,8,9,10,'J','Q','K']
 
-let dealerHand = 0;
-let playerHand = 0;
+let dealerTotal = 0;
+let playerTotal = 0;
+let playerHand = [];
+let dealerHand = [];
 let gameStarted = false;
 let winner = false;
 let playerWins = false;
@@ -20,8 +22,6 @@ let deck = [];
 let newDeck = [];
 
 // Creating a deck
-
-
 function createDeck() {
     for (let i=0; i<suits.length;i++) {
         for (let l=0;l<values.length;l++) {
@@ -30,7 +30,7 @@ function createDeck() {
     }
 }
 
-createDeck()
+// createDeck()
 
 // Shuffling the deck
 function shuffle(arr) {
@@ -42,12 +42,37 @@ function shuffle(arr) {
     return newDeck
 }
 
-shuffle(deck)
+// shuffle(deck)
 
 console.log(newDeck)
 
+// Dealing Cards to player and dealer
+function dealCards(array) {
+    playerHand.push(array[0],array[2])
+    dealerHand.push(array[1],array[3]);
+}
 
-// // deal cards, if player or dealer draws an ace, get score, check for end of game, check/display who won, 
+// dealCards(newDeck)
+
+// Updating DOM Elements with dealt cards and removing Deal button
+function displayPlayerCards(arr) {
+    for (let i=0;i<arr.length;i++) {
+        setTimeout(() => {playerCard.innerHTML += `${playerHand[i]} `;
+        }, i*2000)
+    }
+}
+
+function displayDealerCards(arr) {
+    setTimeout(() => {dealerCard.innerHTML = `${dealerHand[0]} `;
+}, 1000);
+    setTimeout(() => {dealerCard.append(`[Hidden Card]`);
+}, 3000)  
+}
+
+
+
+
+// // if player or dealer draws an ace, get score, check for end of game, check/display who won, 
 
 
 // // Check for End of Game
@@ -62,7 +87,7 @@ console.log(newDeck)
 
 
 
-// dealButton.addEventListener('click', (event) => {
-//     dealCard(values)
-// })
+dealButton.addEventListener('click', (event) => {
+    createDeck(), shuffle(deck), dealCards(newDeck),displayPlayerCards(playerHand),displayDealerCards(dealerHand)
+})
 
