@@ -1,0 +1,51 @@
+body {
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#dealercards {
+    background-color: white;
+    width: 300px;
+    height: 250px;
+    border: 1px solid black;
+}
+
+#playercards {
+    background-color: white;
+    width: 300px;
+    height: 250px;
+    border: 1px solid black;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+}
+
+.dealertitle {
+    color: white;
+}
+
+.playertitle {
+    color: white;
+}
+
+#hit {
+    margin: 0 20px;
+    padding: 5px 20px;
+}
+
+#stay {
+    margin: 0 20px;
+    padding: 5px 20px;
+}
+
+.gamestats {
+    color: white;
+}
+
+.playerHand {
+    color: white;
+}
