@@ -5,8 +5,8 @@ The goal of the game is to beat the dealer by having a hand value of 21 or as cl
 
 After cards are dealt, the player has the option to hit (receive another card) or stay (keep their current hand). Only the dealer's first card is shown to the player. Once a player completes their turn, the dealer will hit if their hand value is 16 or lower, otherwise they stand. Once the dealer completes their turn, their cards are revealed and a winner is decided.
 
-<img height=200 src="https://imgur.com/RkpXoJb" />
-<img height=200 src="https://imgur.com/iD8VhOI" />
+![Game Setup](https://imgur.com/RkpXoJb)
+![Winner](https://imgur.com/iD8VhOI)
 
 
 
